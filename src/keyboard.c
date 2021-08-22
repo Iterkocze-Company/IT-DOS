@@ -10,7 +10,7 @@
 #define B 48
 #define C 46
 #define S 31
-
+#define D 32
 
 #include <stdbool.h>
 
@@ -67,6 +67,12 @@ static unsigned char get_keyboard_char()
 				outb(0x60,0x00);
 				kernel_writestring("C");
 				return 'C';
+			}
+			if (scancode == D)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("D");
+				return 'D';
 			}
 			if (scancode == 0x1C) //Enter
 			{
