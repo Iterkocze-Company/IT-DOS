@@ -65,7 +65,7 @@ static int atoi(char* str)
 
 static int inttostr( char *s, unsigned int n )
 {
-    unsigned int i = 1000000000;
+    unsigned int i = 1000000000; 
 
     if( ((signed)n) < 0 ) 
     {

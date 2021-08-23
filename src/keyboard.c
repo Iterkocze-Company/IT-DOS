@@ -6,11 +6,22 @@
 #define KBD_DATA_PORT 0x60
 
 // KLAWISZE //
-#define A 30
-#define B 48
+#define Z 44
+#define X 45
 #define C 46
+#define V 47
+#define B 48
+#define N 49
+#define M 50
+#define A 30
 #define S 31
 #define D 32
+#define F 33
+#define G 34
+#define H 35
+#define J 36
+#define K 37
+#define L 38
 
 #include <stdbool.h>
 
@@ -73,6 +84,42 @@ static unsigned char get_keyboard_char()
 				outb(0x60,0x00);
 				kernel_writestring("D");
 				return 'D';
+			}
+			if (scancode == Z)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("Z");
+				return 'Z';
+			}
+			if (scancode == X)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("X");
+				return 'X';
+			}
+			if (scancode == V)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("V");
+				return 'V';
+			}
+			if (scancode == B)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("B");
+				return 'B';
+			}
+			if (scancode == N)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("N");
+				return 'N';
+			}
+			if (scancode == M)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("M");
+				return 'M';
 			}
 			if (scancode == 0x1C) //Enter
 			{
