@@ -25,6 +25,8 @@
 
 #include <stdbool.h>
 
+#include "lib/io.h"
+
 static void keyboard_init()
 {
 	outb(KBD_CMD_PORT, KBD_CMD_ECHO);

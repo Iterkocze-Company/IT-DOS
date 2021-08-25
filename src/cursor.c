@@ -1,6 +1,8 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#include "lib/io.h"
+
 void update_cursor(int x, int y)// BuT HooWwwW??//. To dosłownie używa czarnej magii.
 {
 	uint16_t pos = y * 80 + x;
