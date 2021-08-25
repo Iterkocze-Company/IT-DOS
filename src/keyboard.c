@@ -52,6 +52,7 @@ static unsigned char get_keyboard_char()
 {
 	unsigned char oldKey;
 	unsigned char scancode;
+
 	while (true)
 	{
 		oldKey = inb(0x60);
@@ -125,7 +126,7 @@ static unsigned char get_keyboard_char()
 			}
 			if (scancode == 0x1C) //Enter
 			{
-				return 0;
+				return 'e';
 			}
 		}
 	}

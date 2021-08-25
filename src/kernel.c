@@ -3,10 +3,12 @@
 #include <stdint.h>
 
 #include "lib/vga.h"
-#include "lib/keyboard.h"
+//#include "lib/keyboard.h"
+#include "keyboard.c"
 
 #include "intToStr.c"
 #include "cursor.c"
+#include "cmd.c"
 
 void kernel_main(void) 
 {
@@ -16,8 +18,5 @@ void kernel_main(void)
 	kernel_writestring("Witaj w systemie IT-DOS!\n");
 	kernel_writestring("> ");
 
-	unsigned char cmd[1];
-	
-	while (true)
-		cmd[0] = get_keyboard_char();
+	cmd_handler();
 }
