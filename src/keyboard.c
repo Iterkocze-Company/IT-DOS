@@ -132,3 +132,23 @@ static unsigned char get_keyboard_char()
 	}
 }
 
+static void enter_wait()
+{
+	unsigned char oldKey;
+	unsigned char scancode;
+
+	while (true)
+	{
+		oldKey = inb(0x60);
+		oldKey = keyboard_handler();
+		if (oldKey != scancode)
+		{
+			scancode = keyboard_handler();
+			if (scancode == 0x1C)
+			{
+				return;
+			}
+		}
+	}
+}
+
