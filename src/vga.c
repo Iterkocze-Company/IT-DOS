@@ -82,3 +82,16 @@ void add_newline()
 	terminal_row++;
 	terminal_column = 0;
 }
+
+static void clear()
+{
+	for (int i = 0; i<80; i++)
+	{
+		terminal_buffer[i] = 0;
+	}
+
+	for (int i = 0; i<25; i++)
+	{
+		terminal_buffer[i] = 0;
+	}
+}

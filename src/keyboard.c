@@ -24,8 +24,11 @@
 #define L 38
 
 #include <stdbool.h>
+#include <stdint.h>
 
 #include "lib/io.h"
+
+static void clear_buffer();
 
 static void keyboard_init()
 {
@@ -100,11 +103,29 @@ static unsigned char get_keyboard_char()
 				kernel_writestring("X");
 				return 'X';
 			}
+			if (scancode == L)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("L");
+				return 'L';
+			}
+			if (scancode == S)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("S");
+				return 'S';
+			}
 			if (scancode == V)
 			{
 				outb(0x60,0x00);
 				kernel_writestring("V");
 				return 'V';
+			}
+			if (scancode == K)
+			{
+				outb(0x60,0x00);
+				kernel_writestring("K");
+				return 'K';
 			}
 			if (scancode == B)
 			{
@@ -126,6 +147,10 @@ static unsigned char get_keyboard_char()
 			}
 			if (scancode == 0x1C) //Enter
 			{
+				extern uint8_t i;
+				i = -1;
+				clear_buffer();
+				add_newline();
 				return 'e';
 			}
 		}

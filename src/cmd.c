@@ -2,27 +2,50 @@
 #include <stddef.h>
 
 unsigned char cmd[255];
+uint8_t i ;
 
 static void clear_buffer()
 {
 	for(uint8_t i = 0; i<255;i++)
-		cmd[i] = 0;
+		cmd[i] = ' ';
 }
 
-void cmd_handler() //Zrobiony in The Michal Wae
+static void cmd_init()
+{
+	clear_buffer();
+}
+
+void cmd_handler() //Zrobiony in The Michal Wae... O cholera. Ten sterownik to tragedia. Too Bad.
 {
 		
-	for (uint8_t i = 0; i<255; i++)
+	for (i = 0; i<255; i++)
 	{
 		cmd[i] = get_keyboard_char();
 		
-		if (cmd[0] == 'A' && cmd[1] == 'B' && cmd[2] == 'C' && cmd[3] == 'e')
+		/*if (cmd[0] == 'e')
 		{
-			add_newline();
-			kernel_writestring("hah");
+			//clear_buffer();
 			i = -1;
-			clear_buffer();
-			add_newline();	
-		} //dziala, ale jak wpiszesz zla komende raz, to juz petla dostaje ataku serca i nie dziala, a ja nie wiem jak ja zresetowac...
+			//kernel_writestring("Sam Enter!");
+			add_newline();
+		}*/
+
+		if (cmd[0] == 'K' && cmd[1] == 'B' && cmd[2] == 'D' /*&& cmd[3] == 'e'*/)
+		{
+			//kernel_writestring("Keyboard");
+			outb(0x60,0x20);
+			add_newline();
+			//i = -1;
+			clear_buffer(i);
+		}
+		if (cmd[0] == 'C' && cmd[1] == 'L' && cmd[2] == 'S' )
+		{
+			//kernel_writestring("Clear");
+			clear();
+			add_newline();
+			//i = -1;
+			clear_buffer(i);
+		}
+		
 	}
 }

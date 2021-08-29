@@ -13,6 +13,7 @@ void kernel_main(void)
 {
 	//extern uint8_t terminal_color;
 	terminal_initialize();
+	cmd_init();
 
 	kernel_writestring("Witaj w systemie IT-DOS!\n");
 	kernel_writestring("> ");
