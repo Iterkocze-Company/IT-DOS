@@ -149,7 +149,7 @@ static unsigned char get_keyboard_char()
 			{
 				extern uint8_t i;
 				i = -1;
-				clear_buffer();
+				//clear_buffer();
 				add_newline();
 				return 'e';
 			}
