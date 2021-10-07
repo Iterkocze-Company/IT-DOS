@@ -16,11 +16,15 @@ Aby wybodować IT-DOS, potrzebujesz:
 - xorriso
 - grub
 
-Wystarczy uruchomić główny makefile.
+IT-DOS wymaga też cross-compilatora GCC. Jeśli jego nie posiadasz, przeczytaj informacje jak go wykompilować, na tej stronie: https://wiki.osdev.org/GCC_Cross-Compiler
+
+Po wykompilowaniu cross-compilatora GCC, zmień ścieżkę do niego w pliku makefile. Następnie go uruchom.
 
 ### ENG
 To build IT-DOS you need:
 - xorriso
 - grub
 
-Just run the main makefile.
+IT-DOS also requires the GCC cross-compiler. If you don't have it, see how to compile it here: https://wiki.osdev.org/GCC_Cross-Compiler
+
+After compiling the GCC cross-compiler, change the path to it in the makefile. Then run it.
