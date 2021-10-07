@@ -1,7 +1,9 @@
+/* This file is under BSD 3-Clause License and it's part of Iterkocze IT-DOS
+Copyright (c) 2021, Iterkocze-Company
+All rights reserved. */
+
 #include <stdint.h>
 #include <stddef.h>
-
-//#include "include/vga.h"
 
 static inline uint8_t vga_entry_color(enum vga_color fg, enum vga_color bg) 
 {

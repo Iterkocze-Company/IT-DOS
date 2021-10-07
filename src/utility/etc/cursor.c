@@ -1,7 +1,10 @@
+/* This file is under BSD 3-Clause License and it's part of Iterkocze IT-DOS
+Copyright (c) 2021, Iterkocze-Company
+All rights reserved. */
+
 #include <stddef.h>
 #include <stdint.h>
 
-//#include "../../drivers/io/io.c"
 
 void update_cursor(int x, int y)// BuT HooWwwW??//. To dosłownie używa czarnej magii.
 {

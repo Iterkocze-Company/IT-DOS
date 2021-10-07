@@ -1,3 +1,7 @@
+/* This file is under BSD 3-Clause License and it's part of Iterkocze IT-DOS
+Copyright (c) 2021, Iterkocze-Company
+All rights reserved. */
+
 #define KBD_CMD_ENABLE 0xF4 //Wywala na QEMU
 #define KBD_CMD_ECHO 0xEE
 #define KBD_CMD_SELFTEST 0x60
@@ -25,9 +29,6 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-
-//#include "include/keyboard.h"
-//#include "../io/include/io.h"
 
 static void clear_buffer();
 

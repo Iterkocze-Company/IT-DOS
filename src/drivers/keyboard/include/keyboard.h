@@ -1,4 +1,6 @@
-//#include "../keyboard.c"
+/* This file is under BSD 3-Clause License and it's part of Iterkocze IT-DOS
+Copyright (c) 2021, Iterkocze-Company
+All rights reserved. */
 
 static void keyboard_init();
 

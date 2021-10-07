@@ -1,12 +1,9 @@
+/* This file is under BSD 3-Clause License and it's part of Iterkocze IT-DOS
+Copyright (c) 2021, Iterkocze-Company
+All rights reserved. */
+
 #include <stdint.h>
 #include <stddef.h> 
-
-//#include "../../drivers/keyboard/include/keyboard.h"
-//#include "../../drivers/vga/include/vga.h"
-
-//#include "../../drivers/vga/vga.c"
-//#include "../../drivers/io/io.c"
-//#include "../../drivers/keyboard/keyboard.c"
 
 unsigned char cmd[255];
 uint8_t i ;
