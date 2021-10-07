@@ -1,6 +1,13 @@
 #include <stdint.h>
 #include <stddef.h> 
 
+//#include "../../drivers/keyboard/include/keyboard.h"
+//#include "../../drivers/vga/include/vga.h"
+
+//#include "../../drivers/vga/vga.c"
+//#include "../../drivers/io/io.c"
+//#include "../../drivers/keyboard/keyboard.c"
+
 unsigned char cmd[255];
 uint8_t i ;
 
@@ -41,7 +48,7 @@ void cmd_handler() //Zrobiony in The Michal Wae... O cholera. Ten sterownik to t
 		if (cmd[0] == 'C' && cmd[1] == 'L' && cmd[2] == 'S' && cmd[3] == 'e')
 		{
 			//kernel_writestring("Clear");
-			clear();
+			//clear();
 			//add_newline();
 			//i = -1;
 			clear_buffer();

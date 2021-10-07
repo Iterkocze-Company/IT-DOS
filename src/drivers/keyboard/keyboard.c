@@ -26,7 +26,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "lib/io.h"
+//#include "include/keyboard.h"
+//#include "../io/include/io.h"
 
 static void clear_buffer();
 
@@ -51,7 +52,7 @@ unsigned static char keyboard_handler()
 	return scancode;
 }
 
-static unsigned char get_keyboard_char()
+unsigned char get_keyboard_char()
 {
 	unsigned char oldKey;
 	unsigned char scancode;
@@ -147,8 +148,8 @@ static unsigned char get_keyboard_char()
 			}
 			if (scancode == 0x1C) //Enter
 			{
-				extern uint8_t i;
-				i = -1;
+				//extern uint8_t i;
+				//i = -1;
 				//clear_buffer();
 				add_newline();
 				return 'e';

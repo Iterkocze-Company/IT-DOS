@@ -45,5 +45,3 @@ void terminal_write(const char* data, size_t size);
 void kernel_writestring(const char* data);
 
 void add_newline();
-
-#include "../vga.c"

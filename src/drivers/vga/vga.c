@@ -1,3 +1,8 @@
+#include <stdint.h>
+#include <stddef.h>
+
+//#include "include/vga.h"
+
 static inline uint8_t vga_entry_color(enum vga_color fg, enum vga_color bg) 
 {
 	return fg | bg << 4; //Robimy coś chyba takiego: fg = 01001001 bg = 00000000  po << ret = 01001010?

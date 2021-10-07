@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "lib/io.h"
+//#include "../../drivers/io/io.c"
 
 void update_cursor(int x, int y)// BuT HooWwwW??//. To dosłownie używa czarnej magii.
 {
