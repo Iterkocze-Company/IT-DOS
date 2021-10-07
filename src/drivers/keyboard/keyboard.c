@@ -47,7 +47,7 @@ unsigned static char keyboard_handler()
 	unsigned char scancode;
 	keyboard_wait();
 	scancode = inb(0x60);
-	//outb(0x20, 0x20);
+	outb(0x20, 0x20);
 	char str[50];
 
 	return scancode;
@@ -62,7 +62,7 @@ unsigned char get_keyboard_char()
 	{
 		oldKey = inb(0x60);
 		oldKey = keyboard_handler();
-		//outb(0x20, 0x20); ACK?
+		//outb(0x20, 0x20); //ACK?
 		if (oldKey != scancode)
 		{
 			scancode = keyboard_handler();
@@ -153,7 +153,7 @@ unsigned char get_keyboard_char()
 				//i = -1;
 				//clear_buffer();
 				add_newline();
-				return 'e';
+				return 0;
 			}
 		}
 	}
