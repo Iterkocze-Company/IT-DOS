@@ -16,6 +16,7 @@ All rights reserved. */
 #include "../drivers/keyboard/keyboard.c"
 #include "../utility/etc/cmd.c"
 #include "../utility/strcmp/strcmp.c"
+#include "../utility/convert/atoi.c"
 
 void kernel_main(void) 
 {
