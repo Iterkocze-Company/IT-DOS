@@ -30,8 +30,6 @@ All rights reserved. */
 #include <stdbool.h>
 #include <stdint.h>
 
-static void clear_buffer();
-
 static void keyboard_init()
 {
 	outb(KBD_CMD_PORT, KBD_CMD_ECHO);
@@ -53,26 +51,25 @@ unsigned static char keyboard_handler()
 	return scancode;
 }
 
+bool isEnter = false;
+int enterRows = 0;
+
 unsigned char get_keyboard_char()
 {
 	unsigned char oldKey;
 	unsigned char scancode;
-
+	
 	while (true)
 	{
-		oldKey = inb(0x60);
 		oldKey = keyboard_handler();
-		//outb(0x20, 0x20); //ACK?
 		if (oldKey != scancode)
 		{
 			scancode = keyboard_handler();
-			//char str[50];
-			//kernel_writestring(ConvertIntToString(scancode,str,16));
-			//kernel_writestring("\n");
 			if (scancode == A)
 			{
 				outb(0x60,0x00);
 				kernel_writestring("A");
+				isEnter = false;
 				return 'A';
 			}
 			if (scancode == B)
@@ -147,13 +144,14 @@ unsigned char get_keyboard_char()
 				kernel_writestring("M");
 				return 'M';
 			}
-			if (scancode == 0x1C) //Enter
+			if (scancode == 0x1C && isEnter == false && enterRows == 0) //Enter
 			{
-				//extern uint8_t i;
-				//i = -1;
+				kernel_writestring("enter");
+				isEnter = true;
+				enterRows++;
 				//clear_buffer();
 				add_newline();
-				return 0;
+				return '\0';
 			}
 		}
 	}

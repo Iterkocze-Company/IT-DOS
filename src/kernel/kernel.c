@@ -12,8 +12,8 @@ All rights reserved. */
 #include "../drivers/keyboard/include/keyboard.h"
 
 #include "../drivers/io/io.c"
-#include "../drivers/vga/vga.c"
 #include "../drivers/keyboard/keyboard.c"
+#include "../drivers/vga/vga.c"
 #include "../utility/etc/cmd.c"
 #include "../utility/strcmp/strcmp.c"
 #include "../utility/convert/atoi.c"
